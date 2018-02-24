@@ -37,39 +37,44 @@
 </head>
 
 <body>
-<div class="wrapper">
-	<!-- Navigation -->
-	<%@include file="./shared/navbar.jsp"%>
-	<!-- Page Content -->
-	<div class="content"> 
-	<c:if test="${userClickHome == true}">
-		<%@include file="home.jsp"%>
-	</c:if>
-	<!-- Load only when user click about -->
-	<c:if test="${userClickAbout == true}">
-		<%@include file="about.jsp"%>
-	</c:if>
+	<div class="wrapper">
+		<!-- Navigation -->
+		<%@include file="./shared/navbar.jsp"%>
+		<!-- Page Content -->
+		<div class="content">
+			<c:if test="${userClickHome == true}">
+				<%@include file="home.jsp"%>
+			</c:if>
+			<!-- Load only when user click about -->
+			<c:if test="${userClickAbout == true}">
+				<%@include file="about.jsp"%>
+			</c:if>
 
-	<!-- Load only when user click contact -->
-	<c:if test="${userClickContact == true}">
-		<%@include file="contact.jsp"%>
-	</c:if>
+			<!-- Load only when user click contact -->
+			<c:if test="${userClickContact == true}">
+				<%@include file="contact.jsp"%>
+			</c:if>
 
-</div>
-	<!-- /.container -->
+			<!-- Load only when user click contact -->
+			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true}">
+				<%@include file="listProduct.jsp"%>
+			</c:if>
 
-	<!-- Footer -->
-	<%@include file="./shared/footer.jsp"%>
+		</div>
+		<!-- /.container -->
 
-	<!-- Bootstrap core JavaScript -->
-	<script src="${js}/jquery.js"></script>
-	<script src="${js}/bootstrap.bundle.min.js"></script>
-	
-<!-- Self Coded JavaScript  -->
-	<script src="${js}/myapp.js"></script>
-	
-	
-</div>
+		<!-- Footer -->
+		<%@include file="./shared/footer.jsp"%>
+
+		<!-- Bootstrap core JavaScript -->
+		<script src="${js}/jquery.js"></script>
+		<script src="${js}/bootstrap.bundle.min.js"></script>
+
+		<!-- Self Coded JavaScript  -->
+		<script src="${js}/myapp.js"></script>
+
+
+	</div>
 </body>
 
 </html>
